@@ -1,6 +1,22 @@
 {
   "name": "@opinionated-ts/config",
   "description": "Opinionated, reusable TypeScript development configurations focused on performance, code quality and developer experience.",
+  "keywords": [
+    "code-quality",
+    "commitlint",
+    "cspell",
+    "developer-tools",
+    "formatter",
+    "lefthook",
+    "linting",
+    "opinionated",
+    "oxc",
+    "oxfmt",
+    "oxlint",
+    "tooling",
+    "typescript",
+    "typescript-config"
+  ],
   "homepage": "https://github.com/opinionated-ts/config#readme",
   "bugs": {
     "url": "https://github.com/opinionated-ts/config/issues"
