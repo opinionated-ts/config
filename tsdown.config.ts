@@ -5,7 +5,6 @@ export default defineConfig({
     neverBundle: true,
   },
   dts: true,
-  entry: ["**/*.config.ts"],
 
   exports: {
     customExports(exports) {

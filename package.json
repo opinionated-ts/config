@@ -27,9 +27,7 @@
   ],
   "type": "module",
   "exports": {
-    "./commitlint.config": "./dist/commitlint.config.mjs",
-    "./oxfmt.config": "./dist/oxfmt.config.mjs",
-    "./oxlint.config": "./dist/oxlint.config.mjs",
+    ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
   "publishConfig": {
