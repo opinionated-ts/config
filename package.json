@@ -30,10 +30,15 @@
     "access": "public"
   },
   "scripts": {
+    "fmt": "oxfmt --check .",
+    "fmt:fix": "oxfmt .",
     "lint": "oxlint",
-    "lint:fix": "oxlint --fix"
+    "lint:fix": "oxlint --fix",
+    "check": "bun fmt && bun lint ",
+    "fix": "bun fmt:fix && bun lint:fix"
   },
   "dependencies": {
+    "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
     "oxlint-tsgolint": "^7.0.2001"
   },
