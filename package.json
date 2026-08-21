@@ -26,10 +26,17 @@
     "README.md"
   ],
   "type": "module",
+  "exports": {
+    "./commitlint.config": "./dist/commitlint.config.mjs",
+    "./oxfmt.config": "./dist/oxfmt.config.mjs",
+    "./oxlint.config": "./dist/oxlint.config.mjs",
+    "./package.json": "./package.json"
+  },
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
+    "build": "tsdown",
     "fmt": "oxfmt --check .",
     "fmt:fix": "oxfmt .",
     "lint": "oxlint",
@@ -46,7 +53,8 @@
   },
   "devDependencies": {
     "@types/bun": "^1.4.0",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "tsdown": "^0.22.14"
   },
   "peerDependencies": {
     "typescript": "^7.0.2"
