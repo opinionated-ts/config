@@ -111,3 +111,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# TODO files
+.TODO/
+*.TODO
+*.TODO.md
