@@ -1,0 +1,45 @@
+{
+  "name": "@opinionated-ts/config",
+  "description": "Opinionated, reusable TypeScript development configurations focused on performance, code quality and developer experience.",
+  "homepage": "https://github.com/opinionated-ts/config#readme",
+  "bugs": {
+    "url": "https://github.com/opinionated-ts/config/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Opinionated TS",
+    "url": "https://github.com/opinionated-ts"
+  },
+  "contributors": [
+    {
+      "name": "Daniel A. Hernández Ochoa",
+      "url": "https://github.com/DanhezCode"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/opinionated-ts/config.git"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/bun": "^1.4.0",
+    "@types/node": "^26.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "engines": {
+    "bun": "^1.4.0",
+    "node": "^26.2.0"
+  },
+  "packageManager": "bun@1.4.0"
+}
