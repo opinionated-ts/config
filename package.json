@@ -29,7 +29,14 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {},
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
+  },
+  "dependencies": {
+    "oxlint": "^1.79.0",
+    "oxlint-tsgolint": "^7.0.2001"
+  },
   "devDependencies": {
     "@types/bun": "^1.4.0",
     "@types/node": "^26.2.0"
