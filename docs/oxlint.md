@@ -1,0 +1,32 @@
+# Oxlint
+
+This file should be placed at the root of your project as `oxlint.config.ts`:
+
+```ts
+import { defineConfig } from "oxlint";
+import { oxlintConfig } from "@opinionated-ts/config";
+
+export default defineConfig({
+  extends: [oxlintConfig],
+
+  // Your custom configuration
+});
+```
+
+The provided configuration includes:
+
+- Type-aware linting support
+- Type checking enabled
+- Essential correctness rules enabled as errors
+- Performance and suspicious rules enabled as warnings
+- A curated set of plugins:
+  - TypeScript support
+  - Import validation
+  - Promise best practices
+  - Node.js rules
+  - React and JSX accessibility rules
+  - React performance rules
+  - Oxc-specific rules
+  - Unicorn rules
+
+This configuration is intended as a recommended baseline. Additional opinionated rules and presets will be added over time while keeping the focus on performance, code quality, and maintainability.
