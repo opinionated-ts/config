@@ -37,6 +37,6 @@
     //   "react-dom/*": ["./node_modules/preact/compat/*"]
     // },
   },
-  "include": ["src", "*.config.*"],
+  "include": ["src", "tests", "*.config.*"],
   "exclude": []
 }
