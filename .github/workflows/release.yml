@@ -1,0 +1,77 @@
+name: Release
+
+on:
+  workflow_run:
+    workflows:
+      - Check
+    types:
+      - completed
+    branches:
+      - main
+      - master
+      - beta
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push'
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          fetch-depth: 0
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version-file: package.json
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        run: bun run build
+
+      # Node.js is currently required only because `bunx` does not support
+      # multiple `--package` arguments in a single temporary environment.
+      #
+      # This forces the workflow to install both Bun and Node.js, even though
+      # the release toolchain itself could otherwise be executed with Bun.
+      #
+      # Once Bun supports this functionality, this step can be removed and
+      # the release command can be changed from `npx` to `bunx`.
+      #
+      # See: https://github.com/oven-sh/bun/issues/39444
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >
+          npx
+          --package semantic-release@25
+          --package @semantic-release/exec@6.0.3
+          --package conventional-changelog-conventionalcommits@9
+          --package typescript@5.9.3
+          semantic-release
