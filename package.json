@@ -38,6 +38,7 @@
   },
   "files": [
     "dist",
+    "lefthook.yml",
     "LICENSE",
     "README.md"
   ],

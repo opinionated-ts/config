@@ -35,6 +35,7 @@ See the configuration guides for each tool:
 - [CSpell](./docs/cspell.md)
 - [Oxfmt](./docs/oxfmt.md)
 - [Oxlint](./docs/oxlint.md)
+- [Lefthook](./docs/lefthook.md)
 
 ## Philosophy
 

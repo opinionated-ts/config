@@ -10,6 +10,8 @@ export default defineConfig({
     customExports(exports) {
       delete exports["./tsdown.config"];
 
+      exports["./lefthook.yml"] = "./lefthook.yml";
+
       return exports;
     },
   },
