@@ -9,7 +9,8 @@ Extend the packaged config shipped by `@opinionated-ts/config`:
 
 ```json
 {
-  "extends": "@opinionated-ts/config/tsconfig.json"
+  "extends": "@opinionated-ts/config/tsconfig.json",
+  "include": ["src", "tests", "*.config.*"]
 }
 ```
 
@@ -21,8 +22,7 @@ To override or add compiler options, keep the `extends` entry and declare your o
   "compilerOptions": {
     // Your custom config
   },
-  "include": ["src", "tests"],
-  "exclude": []
+  "include": ["src", "tests", "*.config.*"]
 }
 ```
 
