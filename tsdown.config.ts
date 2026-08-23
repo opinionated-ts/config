@@ -11,6 +11,7 @@ export default defineConfig({
       delete exports["./tsdown.config"];
 
       exports["./lefthook.yml"] = "./lefthook.yml";
+      exports["./tsconfig.json"] = "./tsconfig.json";
 
       return exports;
     },

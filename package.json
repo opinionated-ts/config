@@ -39,6 +39,7 @@
   "files": [
     "dist",
     "lefthook.yml",
+    "tsconfig.json",
     "LICENSE",
     "README.md"
   ],
