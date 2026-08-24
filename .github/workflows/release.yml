@@ -1,29 +1,13 @@
 name: Release
 
 on:
-  workflow_run:
-    workflows:
-      - Check
-    types:
-      - completed
-    branches:
-      - main
-      - master
-      - beta
+  workflow_call:
 
 permissions:
   contents: read
 
-concurrency:
-  group: release-${{ github.event.workflow_run.head_branch }}
-  cancel-in-progress: false
-
 jobs:
   release:
-    if: >-
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'push'
-
     runs-on: ubuntu-latest
 
     permissions:
@@ -36,7 +20,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
           fetch-depth: 0
 
       - name: Setup Bun

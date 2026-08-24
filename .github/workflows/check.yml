@@ -1,15 +1,20 @@
 name: Check
 
 on:
-  pull_request:
-  push:
+  workflow_call:
+    inputs:
+      is_pull_request:
+        type: boolean
+        default: false
+      base_sha:
+        type: string
+        default: ""
+      head_sha:
+        type: string
+        default: ""
 
 permissions:
   contents: read
-
-concurrency:
-  group: check-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
 
 jobs:
   checks:
@@ -46,14 +51,14 @@ jobs:
             lint)      bun lint ;;
             tests)     bun test ;;
             commitlint)
-              if [ "${{ github.event_name }}" != "pull_request" ]; then
+              if [ "${{ inputs.is_pull_request }}" != "true" ]; then
                 echo "Skipping commitlint"
                 exit 0
               fi
 
               bunx commitlint \
-                --from "${{ github.event.pull_request.base.sha }}" \
-                --to "${{ github.event.pull_request.head.sha }}"
+                --from "${{ inputs.base_sha }}" \
+                --to "${{ inputs.head_sha }}"
               ;;
           esac
         shell: bash
