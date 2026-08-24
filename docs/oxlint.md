@@ -3,13 +3,15 @@
 This file should be placed at the root of your project as `oxlint.config.ts`:
 
 ```ts
-import { defineConfig } from "oxlint";
 import { oxlintConfig } from "@opinionated-ts/config";
+import { defineConfig } from "oxlint";
 
 export default defineConfig({
   extends: [oxlintConfig],
 
-  // Your custom configuration
+  rules: {
+    // Your custom rules
+  },
 });
 ```
 

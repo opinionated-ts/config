@@ -3,16 +3,29 @@
 This file should be placed at the root of your project as `cspell.config.ts`:
 
 ```ts
-import type { CSpellSettings } from "cspell";
 import { cspellConfig } from "@opinionated-ts/config";
+import { defineConfig } from "cspell";
 
-export default {
+export default defineConfig({
   ...cspellConfig,
+
+  dictionaries: [
+    ...cspellConfig.dictionaries,
+    // Add your custom dictionaries here
+  ],
+
+  import: [
+    ...cspellConfig.import,
+    // Add your custom import paths here
+  ],
+
   words: [
     ...cspellConfig.words,
-    // Your custom words
+    // Add your custom words here
   ],
-} satisfies CSpellSettings;
+
+  // Add any additional custom configuration here
+});
 ```
 
 You can also export it directly if you do not need to customize it:
