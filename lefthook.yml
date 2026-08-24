@@ -37,3 +37,14 @@ pre-push:
       fail_text: |
         Security vulnerabilities detected.
         Run `bun audit fix` manually to try resolving them.
+
+    # Lint is repeated here, but over the WHOLE project instead of {staged_files}.
+    # Reason: in pre-commit, lint only runs on staged files, so a type change in
+    # one file can break integration/type-check in other files that weren't
+    # touched in that commit and therefore never went through the linter. Before
+    # pushing (once you have the full picture of all commits), it's worth
+    # running lint over the whole repo to catch those cross-file breakages
+    # before they reach the remote.
+    run-lint-full:
+      run: bun oxlint .
+      glob: "*.{ts,tsx,js,jsx}"
