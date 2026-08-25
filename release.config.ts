@@ -59,7 +59,8 @@ export default {
     [
       "@semantic-release/exec",
       {
-        successCmd: "bun scripts/update-major-tag.ts ${nextRelease.major}",
+        successCmd:
+          'if [ "${branch.name}" = "main" ]; then bun scripts/update-major-tag.ts ${nextRelease.version}; fi',
       },
     ],
   ],

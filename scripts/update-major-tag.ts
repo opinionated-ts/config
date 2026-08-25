@@ -1,13 +1,14 @@
+#!/usr/bin/env bun
+
 /**
  * Keeps the floating major tag (for example `v1`) pointing at the latest
- * compatible release commit.
+ * compatible stable release commit.
  *
  * Semantic release already creates immutable version tags such as `v1.2.3`.
  * This extra step updates the moving major tag so other repositories can
  * reuse the current workflow or release contract through a stable reference
  * like `opinionated-ts/config/.github/workflows/check.yml@v1`.
  */
-
 function run(command: string[], label: string): string {
   const result = Bun.spawnSync(command, {
     stderr: "inherit",
@@ -21,13 +22,14 @@ function run(command: string[], label: string): string {
   return new TextDecoder().decode(result.stdout).trim();
 }
 
-const major = process.argv[2];
+const version = process.argv[2];
 
-if (!major || !/^\d+$/.test(major)) {
-  console.error("Usage: bun scripts/update-major-tag.ts <major>");
+if (!version || !/^\d+\.\d+\.\d+(?:[-+].+)?$/.test(version)) {
+  console.error("Usage: bun scripts/update-major-tag.ts <version>");
   process.exit(2);
 }
 
+const major = version.split(".")[0];
 const tag = `v${major}`;
 const head = run(["git", "rev-parse", "HEAD"], "git rev-parse HEAD");
 
