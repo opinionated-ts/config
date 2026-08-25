@@ -46,7 +46,9 @@
   "type": "module",
   "exports": {
     ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./lefthook.yml": "./lefthook.yml",
+    "./tsconfig.json": "./tsconfig.json"
   },
   "publishConfig": {
     "access": "public"
