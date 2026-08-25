@@ -37,6 +37,7 @@ See the configuration guides for each tool:
 - [Oxfmt](./docs/oxfmt.md)
 - [Oxlint](./docs/oxlint.md)
 - [Lefthook](./docs/lefthook.md)
+- [GitHub Actions](./docs/github-actions.md)
 
 ## Philosophy
 

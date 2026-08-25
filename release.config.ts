@@ -56,5 +56,11 @@ export default {
     // Comment out the plugins you do not want to publish to.
     "@semantic-release/npm", // → publish to npm
     "@semantic-release/github", // → create a GitHub Release
+    [
+      "@semantic-release/exec",
+      {
+        successCmd: "bun scripts/update-major-tag.ts ${nextRelease.major}",
+      },
+    ],
   ],
 };
