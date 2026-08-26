@@ -51,3 +51,5 @@ The reusable workflows provide default automation for TypeScript repositories:
 
 - A `check` workflow that runs formatting, linting, tests, and commit message validation
 - A `release` workflow that builds the package and publishes with semantic-release
+
+The workflows expect the consuming repository to provide the scripts documented in [Scripts](./scripts.md), and the release flow also expects a root `release.config.ts` based on the packaged [Release](./release.md) guide.

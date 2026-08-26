@@ -31,6 +31,7 @@ Each configuration can be used directly as a recommended default or customized d
 
 See the configuration guides for each tool:
 
+- [Scripts](./docs/scripts.md)
 - [Typescript](./docs/tsconfig.md)
 - [Commitlint](./docs/commitlint.md)
 - [CSpell](./docs/cspell.md)
@@ -38,6 +39,7 @@ See the configuration guides for each tool:
 - [Oxlint](./docs/oxlint.md)
 - [Lefthook](./docs/lefthook.md)
 - [GitHub Actions](./docs/github-actions.md)
+- [Release](./docs/release.md)
 
 ## Philosophy
 

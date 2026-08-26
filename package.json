@@ -48,7 +48,8 @@
     ".": "./dist/index.mjs",
     "./package.json": "./package.json",
     "./lefthook.yml": "./lefthook.yml",
-    "./tsconfig.json": "./tsconfig.json"
+    "./tsconfig.json": "./tsconfig.json",
+    "./release": "./dist/configs/release.mjs"
   },
   "publishConfig": {
     "access": "public"
@@ -77,6 +78,8 @@
   "devDependencies": {
     "@types/bun": "^1.4.0",
     "@types/node": "^26.2.0",
+    "conventional-changelog-conventionalcommits": "^10.4.0",
+    "semantic-release": "^25.0.9",
     "tsdown": "^0.22.14"
   },
   "peerDependencies": {

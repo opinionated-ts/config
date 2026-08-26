@@ -25,6 +25,8 @@ pre-commit:
 
 Alternatively, if you don't want to use `extends`, you can open `./node_modules/@opinionated-ts/config/lefthook.yml` directly and copy only the hooks or commands you need into your own `lefthook.yml`.
 
+The hooks assume the consumer repository provides the scripts documented in [Scripts](./scripts.md) and that the matching `package.json` entries keep the expected names.
+
 ## What's included
 
 The extended config provides default hooks and commands for TypeScript projects:
