@@ -23,3 +23,16 @@ The provided configuration enables:
 - Tailwind CSS class sorting
 - Consistent import ordering
 - Type/value import separation
+
+## Recommended scripts
+
+- Add `fmt` and `fmt:fix` scripts to `package.json` for convenience. Example:
+
+```json
+{
+  "scripts": {
+    "fmt": "oxfmt --check .",
+    "fmt:fix": "oxfmt ."
+  }
+}
+```

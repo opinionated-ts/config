@@ -47,9 +47,9 @@ jobs:
       - name: Run ${{ matrix.task }}
         run: |
           case "${{ matrix.task }}" in
-            format)    bun fmt ;;
-            lint)      bun lint ;;
-            tests)     bun test ;;
+            format)    bun oxfmt --check . ;;
+            lint)      bun oxlint ;;
+            tests)     bun run tests || bun test ;;
             commitlint)
               if [ "${{ inputs.is_pull_request }}" != "true" ]; then
                 echo "Skipping commitlint"

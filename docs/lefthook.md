@@ -25,8 +25,6 @@ pre-commit:
 
 Alternatively, if you don't want to use `extends`, you can open `./node_modules/@opinionated-ts/config/lefthook.yml` directly and copy only the hooks or commands you need into your own `lefthook.yml`.
 
-The hooks assume the consumer repository provides the scripts documented in [Scripts](./scripts.md) and that the matching `package.json` entries keep the expected names.
-
 ## What's included
 
 The extended config provides default hooks and commands for TypeScript projects:
@@ -42,12 +40,29 @@ The extended config provides default hooks and commands for TypeScript projects:
 
 ## Exported commands
 
-| Hook         | Command      | Runs                                       |
-| ------------ | ------------ | ------------------------------------------ |
-| `pre-commit` | `format`     | `bun oxfmt --write {staged_files}`         |
-| `pre-commit` | `lint`       | `bun oxlint --fix {staged_files}`          |
-| `commit-msg` | `commitlint` | `bunx commitlint --edit {1}`               |
-| `pre-push`   | `run-tests`  | `bun test`                                 |
-| `pre-push`   | `run-audit`  | `bun audit` (prints `fail_text` on issues) |
+| Hook         | Command      | Runs                               |
+| ------------ | ------------ | ---------------------------------- |
+| `pre-commit` | `format`     | `bun oxfmt --write {staged_files}` |
+| `pre-commit` | `lint`       | `bun oxlint --fix {staged_files}`  |
+| `commit-msg` | `commitlint` | `bunx commitlint --edit {1}`       |
+| `pre-push`   | `run-tests`  | `bun run tests \|\| bun test`      |
+| `pre-push`   | `run-audit`  | `bun audit`                        |
 
-Avoid reusing these command names unless you intend to replace the packaged behavior. For example, declaring your own `run-tests` under `pre-push` will replace the packaged one.
+Avoid reusing these command names unless you want to replace the packaged behavior.
+
+## Recommended scripts
+
+- `build`: build your project (optional, only needed if your project has a build step).
+- `tests`: control test invocation.
+
+```json
+{
+  "scripts": {
+    "tests": "bun test",
+    "build": "bun run build"
+  }
+}
+```
+
+> [!NOTE]
+> Hooks run `bun run tests` when the script exists and fall back to `bun test`.

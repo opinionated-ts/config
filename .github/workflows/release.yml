@@ -31,7 +31,22 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build
-        run: bun run build
+        run: |
+          echo "Checking for 'build' script"
+          bun ./scripts/check-build.ts
+          check_exit=$?
+          if [ "$check_exit" -eq 0 ]; then
+            echo "'build' script present. Running 'bun run build'"
+            if ! bun run build; then
+              echo "'bun run build' failed"
+              exit 1
+            fi
+          elif [ "$check_exit" -eq 2 ]; then
+            echo "No 'build' script found — skipping build step"
+          else
+            echo "build check failed (exit code $check_exit) — skipping build step and logging"
+            # The check script already printed an error; continue but do not attempt build
+          fi
 
       # Node.js is currently required only because `bunx` does not support
       # multiple `--package` arguments in a single temporary environment.

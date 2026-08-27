@@ -68,3 +68,20 @@ export { default } from "@opinionated-ts/config/release";
 - This config is a reusable baseline, not a strict npm publishing recipe. It is useful for public and private packages alike when the goal is controlled versioning and changelog generation.
 - `package.json` must include a valid `repository.url` so `semantic-release` can link releases, tags, and changelog metadata to the correct GitHub repository.
 - If you want to add or override branches or plugins, spread `semanticReleaseConfig` and customize the fields you need.
+
+## Recommended scripts
+
+- `build`: build your project (optional, only needed if your project has a build step).
+- `tests`: control test invocation.
+
+```json
+{
+  "scripts": {
+    "tests": "bun test",
+    "build": "bun run build"
+  }
+}
+```
+
+> [!NOTE]
+> Hooks run `bun run tests` when the script exists and fall back to `bun test`.

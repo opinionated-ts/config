@@ -40,3 +40,15 @@ The provided configuration includes:
 - English and Spanish language support
 - TypeScript tooling terms
 - Default ignored build directories
+
+## Recommended scripts
+
+- Add a `cspell` script to `package.json` for easy invocation. Example:
+
+```json
+{
+  "scripts": {
+    "cspell": "cspell lint ."
+  }
+}
+```

@@ -32,3 +32,16 @@ The provided configuration includes:
   - Unicorn rules
 
 This configuration is intended as a recommended baseline. Additional opinionated rules and presets will be added over time while keeping the focus on performance, code quality, and maintainability.
+
+## Recommended scripts
+
+- Add `lint` and `lint:fix` scripts to `package.json` for convenient invocation. Example:
+
+```json
+{
+  "scripts": {
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
+  }
+}
+```
