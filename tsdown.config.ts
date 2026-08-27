@@ -3,7 +3,10 @@ import { defineConfig } from "tsdown";
 export default defineConfig({
   entry: ["src/index.ts", "src/configs/release.ts"],
   deps: {
-    neverBundle: true,
+    onlyBundle: ["@commitlint/types"],
+  },
+  treeshake: {
+    moduleSideEffects: false,
   },
   dts: true,
 
