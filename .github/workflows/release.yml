@@ -32,8 +32,28 @@ jobs:
 
       - name: Build
         run: |
-          echo "Checking for 'build' script"
-          bun ./scripts/check-build.ts
+          echo "Checking for 'build' script in package.json"
+
+          bun - <<'BUN'
+          const fs = require('node:fs');
+
+          try {
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            const scripts = pkg?.scripts ?? {};
+
+            if (Object.prototype.hasOwnProperty.call(scripts, 'build')) {
+              console.log("Found 'build' script in package.json");
+              process.exit(0);
+            }
+
+            console.log("No 'build' script found in package.json");
+            process.exit(2);
+          } catch (error) {
+            console.error(`Error checking package.json: ${String(error)}`);
+            process.exit(1);
+          }
+          BUN
+
           check_exit=$?
           if [ "$check_exit" -eq 0 ]; then
             echo "'build' script present. Running 'bun run build'"
@@ -45,7 +65,6 @@ jobs:
             echo "No 'build' script found — skipping build step"
           else
             echo "build check failed (exit code $check_exit) — skipping build step and logging"
-            # The check script already printed an error; continue but do not attempt build
           fi
 
       # Node.js is currently required only because `bunx` does not support
