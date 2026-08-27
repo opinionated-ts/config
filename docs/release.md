@@ -29,31 +29,10 @@ export default {
 } satisfies Options;
 ```
 
-## Using the shareable config
-
-If you want to use semantic-release's `extends` support, point it at the packaged shareable config:
-
-```ts
-import { type Options } from "semantic-release";
-
-import { semanticReleaseConfig } from "@opinionated-ts/config";
-
-export default {
-  extends: "@opinionated-ts/config/release",
-
-  plugins: [
-    ...semanticReleaseConfig.plugins,
-
-    // your custom plugins here
-    // "@semantic-release/npm", // → publish to npm if needed
-  ],
-} satisfies Options;
-```
-
 If you do not need to customize anything, you can re-export it directly:
 
 ```ts
-export { default } from "@opinionated-ts/config/release";
+export { semanticReleaseConfig as default } from "@opinionated-ts/config";
 ```
 
 ## What's included
