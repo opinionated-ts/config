@@ -34,6 +34,7 @@ jobs:
         run: |
           echo "Checking for 'build' script in package.json"
 
+          set +e
           bun - <<'BUN'
           const fs = require('node:fs');
 
@@ -53,8 +54,9 @@ jobs:
             process.exit(1);
           }
           BUN
-
           check_exit=$?
+          set -e
+
           if [ "$check_exit" -eq 0 ]; then
             echo "'build' script present. Running 'bun run build'"
             if ! bun run build; then
