@@ -7,4 +7,4 @@ export { commitlintConfig } from "./configs/commitlint";
 export { cspellConfig } from "./configs/cspell";
 export { oxfmtConfig } from "./configs/oxfmt";
 export { oxlintConfig } from "./configs/oxlint";
-export { default as release } from "./configs/release";
+export { default as semanticReleaseConfig } from "./configs/semanticReleaseConfig";

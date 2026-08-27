@@ -49,7 +49,7 @@
     "./package.json": "./package.json",
     "./lefthook.yml": "./lefthook.yml",
     "./tsconfig.json": "./tsconfig.json",
-    "./release": "./dist/configs/release.mjs"
+    "./release": "./dist/configs/semanticReleaseConfig.mjs"
   },
   "publishConfig": {
     "access": "public"
@@ -73,13 +73,13 @@
     "lefthook": "^2.1.10",
     "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
-    "oxlint-tsgolint": "^7.0.2001"
+    "oxlint-tsgolint": "^7.0.2001",
+    "semantic-release": "^25.0.9"
   },
   "devDependencies": {
     "@types/bun": "^1.4.0",
     "@types/node": "^26.2.0",
     "conventional-changelog-conventionalcommits": "^10.4.0",
-    "semantic-release": "^25.0.9",
     "tsdown": "^0.22.14"
   },
   "peerDependencies": {

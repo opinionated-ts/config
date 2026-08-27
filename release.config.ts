@@ -1,6 +1,6 @@
 import { type Options } from "semantic-release";
 
-import { semanticReleaseConfig } from "./src/configs/release.ts";
+import { semanticReleaseConfig } from "./src/configs/semanticReleaseConfig.ts";
 
 export default {
   ...semanticReleaseConfig,

@@ -1,7 +1,7 @@
 import { defineConfig } from "tsdown";
 
 export default defineConfig({
-  entry: ["src/index.ts", "src/configs/release.ts"],
+  entry: ["src/index.ts", "src/configs/semanticReleaseConfig.ts"],
   deps: {
     onlyBundle: ["@commitlint/types"],
   },
@@ -15,8 +15,8 @@ export default defineConfig({
       exports["./lefthook.yml"] = "./lefthook.yml";
       exports["./tsconfig.json"] = "./tsconfig.json";
 
-      exports["./release"] = exports["./configs/release"];
-      delete exports["./configs/release"];
+      exports["./release"] = exports["./configs/semanticReleaseConfig"];
+      delete exports["./configs/semanticReleaseConfig"];
 
       return exports;
     },
