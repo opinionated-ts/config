@@ -28,6 +28,7 @@ jobs:
           - format
           - lint
           - tests
+          - audit
           - commitlint
 
     steps:
@@ -50,6 +51,7 @@ jobs:
             format)    bun oxfmt --check . ;;
             lint)      bun oxlint ;;
             tests)     bun run tests || bun test ;;
+            audit)     bun audit ;;
             commitlint)
               if [ "${{ inputs.is_pull_request }}" != "true" ]; then
                 echo "Skipping commitlint"
