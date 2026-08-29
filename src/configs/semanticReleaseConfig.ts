@@ -57,7 +57,7 @@ export const semanticReleaseConfig = {
           types: [
             { type: "feat", section: "🚀 New Features", effect: "bump" },
             { type: "fix", section: "🐞 Bug Fixes", effect: "bump" },
-            { type: "docs", section: "📚 Documentation Improvements", effect: "changelog" },
+            { type: "docs", section: "📚 Documentation Changues", effect: "changelog" },
             { type: "style", section: "🎨 Code Style & Formatting", effect: "changelog" },
             { type: "refactor", section: "🔧 Code Refactoring", effect: "changelog" },
             { type: "perf", section: "⚡ Performance Improvements", effect: "bump" },
