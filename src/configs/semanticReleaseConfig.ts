@@ -20,17 +20,22 @@ export const semanticReleaseConfig = {
   branches: [
     "main",
     {
-      name: "beta/*",
+      name: "master",
+      channel: false,
+    },
+
+    {
+      name: "beta",
       prerelease: "beta",
       channel: "beta",
     },
     {
-      name: "next/*",
+      name: "next",
       prerelease: "next",
       channel: "next",
     },
     {
-      name: "insiders/*",
+      name: "insiders",
       prerelease: "insiders",
       channel: "insiders",
     },

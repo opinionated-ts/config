@@ -37,7 +37,14 @@ export { semanticReleaseConfig as default } from "@opinionated-ts/config";
 
 ## What's included
 
-- `semantic-release` with `main`, `beta/*`, `next/*`, and `insiders/*` branches
+- `semantic-release` configured for:
+  - Stable releases (published to `latest` channel):
+    - `main` branch (default behavior)
+    - `master` branch (explicitly configured with `channel: false`)
+  - Prereleases:
+    - `beta` branch → `beta` channel
+    - `next` branch → `next` channel
+    - `insiders` branch → `insiders` channel
 - Conventional Commits-based release analysis and release notes
 - GitHub Release publishing
 
