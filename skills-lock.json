@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "conventional-commit-message": {
+      "source": "opinionated-ts/agent",
+      "sourceType": "github",
+      "skillPath": "skills/conventional-commit-message/SKILL.md",
+      "computedHash": "f0e3c7423d2e2dfc489d787f6cf7a61ddf022848697269d6dc0329f2099eedea"
+    },
+    "dependency-selector": {
+      "source": "opinionated-ts/ai-tools",
+      "sourceType": "github",
+      "skillPath": "src/skills/dependency-selector/SKILL.md",
+      "computedHash": "bfea6b8609a38ff70c771ddfc655ed48833a437094b0221769acfaff9b9b5e21"
+    }
+  }
+}

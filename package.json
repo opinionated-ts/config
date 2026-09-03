@@ -80,6 +80,7 @@
     "@types/bun": "^1.4.0",
     "@types/node": "^26.2.0",
     "conventional-changelog-conventionalcommits": "^10.4.0",
+    "skills": "^1.5.23",
     "tsdown": "^0.22.14"
   },
   "peerDependencies": {
