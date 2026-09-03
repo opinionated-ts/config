@@ -13,7 +13,6 @@ export const commitlintConfig = {
     "header-max-length": [RuleConfigSeverity.Error, "always", MAX_HEADER_LENGTH],
     "scope-case": [RuleConfigSeverity.Error, "always", "lower-case"],
     "scope-max-length": [RuleConfigSeverity.Error, "always", MAX_SCOPE_LENGTH],
-    "subject-case": [RuleConfigSeverity.Error, "always", ["lower-case"]],
     "subject-full-stop": [RuleConfigSeverity.Error, "never", "."],
   },
 } satisfies UserConfig;
