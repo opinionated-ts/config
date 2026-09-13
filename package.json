@@ -86,6 +86,24 @@
   "peerDependencies": {
     "typescript": "^7.0.2"
   },
+  "resolutions": {
+    "aggregate-error": "npm:@socketregistry/aggregate-error@^1",
+    "indent-string": "npm:@socketregistry/indent-string@^1",
+    "is-unicode-supported": "npm:@socketregistry/is-unicode-supported@^1",
+    "isarray": "npm:@socketregistry/isarray@^1",
+    "object-assign": "npm:@socketregistry/object-assign@^1",
+    "safe-buffer": "npm:@socketregistry/safe-buffer@^1",
+    "safer-buffer": "npm:@socketregistry/safer-buffer@^1"
+  },
+  "overrides": {
+    "aggregate-error": "npm:@socketregistry/aggregate-error@^1",
+    "indent-string": "npm:@socketregistry/indent-string@^1",
+    "is-unicode-supported": "npm:@socketregistry/is-unicode-supported@^1",
+    "isarray": "npm:@socketregistry/isarray@^1",
+    "object-assign": "npm:@socketregistry/object-assign@^1",
+    "safe-buffer": "npm:@socketregistry/safe-buffer@^1",
+    "safer-buffer": "npm:@socketregistry/safer-buffer@^1"
+  },
   "engines": {
     "bun": "^1.4.0",
     "node": "^26.2.0"
