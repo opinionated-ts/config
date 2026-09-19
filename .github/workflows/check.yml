@@ -50,7 +50,7 @@ jobs:
           case "${{ matrix.task }}" in
             format)    bun oxfmt --check . ;;
             lint)      bun oxlint ;;
-            tests)     bun run tests || bun test ;;
+            tests)     bun run tests || bun run test || bun test;;
             audit)     bun audit ;;
             commitlint)
               if [ "${{ inputs.is_pull_request }}" != "true" ]; then
