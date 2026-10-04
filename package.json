@@ -63,7 +63,8 @@
     "lint:fix": "oxlint --fix",
     "check": "bun fmt && bun lint && bun cspell",
     "fix": "bun fmt:fix && bun lint:fix",
-    "hooks:install": "lefthook install"
+    "hooks:install": "lefthook install",
+    "audit": "bun audit fix --ignore GHSA-vfj7-8cjw-p6xm"
   },
   "dependencies": {
     "@commitlint/cli": "^21.2.2",
