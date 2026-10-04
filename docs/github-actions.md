@@ -56,6 +56,7 @@ The reusable workflows provide default automation for TypeScript repositories:
 
 - `build`: build your project (optional, only needed if your project has a build step).
 - `tests`: control test invocation.
+- `audit`: customize dependency auditing (optional; defaults to `bun audit`).
 
 ```json
 {
@@ -67,4 +68,4 @@ The reusable workflows provide default automation for TypeScript repositories:
 ```
 
 > [!NOTE]
-> Hooks run `bun run tests` when the script exists and fall back to `bun test`.
+> CI runs project-defined `tests`, `test`, and `audit` scripts when available, falling back to `bun test` and `bun audit` respectively.

@@ -33,7 +33,7 @@ pre-push:
       run: bun run tests || bun run test || bun test
 
     run-audit:
-      run: bun audit
+      run: bun run audit || bun audit
       fail_text: |
         Security vulnerabilities detected.
         Run `bun audit fix` manually to try resolving them.
