@@ -30,7 +30,7 @@ Alternatively, if you don't want to use `extends`, you can open `./node_modules/
 The extended config provides default hooks and commands for TypeScript projects:
 
 - Hooks: `pre-commit`, `commit-msg`, `pre-push`
-- Commands for formatting (`oxfmt`), linting (`oxlint`), commit linting (`commitlint`), testing (`bun test`), and dependency auditing (`bun audit`)
+- Commands for formatting (`oxfmt`), linting (`oxlint`), commit linting (`commitlint`), testing, and dependency auditing
 - Sensible default include/ignore patterns for TypeScript repos
 
 ## Override behavior
@@ -40,13 +40,13 @@ The extended config provides default hooks and commands for TypeScript projects:
 
 ## Exported commands
 
-| Hook         | Command      | Runs                               |
-| ------------ | ------------ | ---------------------------------- |
-| `pre-commit` | `format`     | `bun oxfmt --write {staged_files}` |
-| `pre-commit` | `lint`       | `bun oxlint --fix {staged_files}`  |
-| `commit-msg` | `commitlint` | `bunx commitlint --edit {1}`       |
-| `pre-push`   | `run-tests`  | `bun run tests \|\| bun test`      |
-| `pre-push`   | `run-audit`  | `bun audit`                        |
+| Hook         | Command      | Runs                                            |
+| ------------ | ------------ | ----------------------------------------------- |
+| `pre-commit` | `format`     | `bun oxfmt --write {staged_files}`              |
+| `pre-commit` | `lint`       | `bun oxlint --fix {staged_files}`               |
+| `commit-msg` | `commitlint` | `bunx commitlint --edit {1}`                    |
+| `pre-push`   | `run-tests`  | `bun run tests \|\| bun run test \|\| bun test` |
+| `pre-push`   | `run-audit`  | `bun run audit \|\| bun audit`                  |
 
 Avoid reusing these command names unless you want to replace the packaged behavior.
 
@@ -54,6 +54,7 @@ Avoid reusing these command names unless you want to replace the packaged behavi
 
 - `build`: build your project (optional, only needed if your project has a build step).
 - `tests`: control test invocation.
+- `audit`: customize dependency auditing (optional; defaults to `bun audit`).
 
 ```json
 {
@@ -65,4 +66,4 @@ Avoid reusing these command names unless you want to replace the packaged behavi
 ```
 
 > [!NOTE]
-> Hooks run `bun run tests` when the script exists and fall back to `bun test`.
+> Hooks run project-defined `tests`, `test`, and `audit` scripts when available, falling back to `bun test` and `bun audit` respectively.
