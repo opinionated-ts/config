@@ -30,6 +30,11 @@ export const semanticReleaseConfig = {
       channel: "beta",
     },
     {
+      name: "canary",
+      prerelease: "canary",
+      channel: "canary",
+    },
+    {
       name: "next",
       prerelease: "next",
       channel: "next",

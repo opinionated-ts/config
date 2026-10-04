@@ -43,6 +43,7 @@ export { semanticReleaseConfig as default } from "@opinionated-ts/config";
     - `master` branch (explicitly configured with `channel: false`)
   - Prereleases:
     - `beta` branch → `beta` channel
+    - `canary` branch → `canary` channel
     - `next` branch → `next` channel
     - `insiders` branch → `insiders` channel
 - Conventional Commits-based release analysis and release notes
