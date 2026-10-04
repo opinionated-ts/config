@@ -1,0 +1,52 @@
+name: 🚀 Feature request
+description: Propose a new capability or behavior.
+title: "feat: "
+type: Enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to propose a feature.
+
+        Focus on the problem, desired outcome, and scope rather than prescribing an implementation.
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: Explain the problem, opportunity, or need behind this proposal and why it matters.
+      placeholder: |
+        Explain the need or problem this change would address.
+
+        Example:
+        Provide a consistent way to create typed errors across the package.
+
+        Not:
+        Why: Add a `createError` function.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Context
+      description: Add relevant context that helps evaluate the proposal but is not already covered above.
+      placeholder: |
+        Include only when relevant:
+
+        Design considerations:
+        - ...
+
+        Trade-offs or alternatives:
+        - ...
+
+        References:
+        - owner/repository#NUMBER
+        - #NUMBER
+        - https://...
+
+        Other context:
+        - ...
+    validations:
+      required: false

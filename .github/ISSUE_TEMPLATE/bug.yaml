@@ -1,0 +1,83 @@
+name: 🐛 Bug report
+description: Report incorrect or unexpected behavior.
+title: "bug: "
+type: Bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+
+        Please provide enough information to understand, reproduce, and investigate the issue.
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: Describe what should happen.
+      placeholder: |
+        Requests using expired sessions should be rejected.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: Describe what currently happens instead.
+      placeholder: |
+        Requests using expired sessions are accepted as authenticated.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence of steps needed to reproduce the issue.
+      placeholder: |
+        1. Create a session.
+        2. Wait for the session to expire.
+        3. Send an authenticated request.
+        4. Observe that the request is accepted.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-notes
+    attributes:
+      label: Additional Notes
+      description: Add context that may help understand, reproduce, or investigate the issue.
+      placeholder: |
+        Include only when relevant:
+
+        Environment:
+        - OS:
+        - Runtime:
+        - Package version:
+        - Relevant configuration:
+
+        References:
+
+        Use `username|org/repository#NUMBER` for external repositories and `#NUMBER` for this repository.
+
+        Issues:
+        - username|org/repository#ISSUE_NUMBER
+        - #ISSUE_NUMBER
+
+        Discussions:
+        - username|org/repository#DISCUSSION_NUMBER
+        - #DISCUSSION_NUMBER
+
+        Pull requests:
+        - username|org/repository#PR_NUMBER
+        - #PR_NUMBER
+
+        Documentation:
+        - https://...
+
+        Additional context:
+        - ...
+    validations:
+      required: false
