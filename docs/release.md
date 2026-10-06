@@ -13,9 +13,8 @@ It does not publish to npm by default, so it works for both public and private p
 If you want to import the config into your own `release.config.ts`, use the named export from the main package:
 
 ```ts
-import { type Options } from "semantic-release";
-
 import { semanticReleaseConfig } from "@opinionated-ts/config";
+import { type Options } from "semantic-release";
 
 export default {
   ...semanticReleaseConfig,

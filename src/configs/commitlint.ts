@@ -9,7 +9,6 @@ const MAX_BODY_LINE_LENGTH = 160;
 export const commitlintConfig = {
   extends: ["@commitlint/config-conventional"],
   rules: {
-    // @ts-expect-error -- Incorrectly typed as CaseRuleConfig; see https://github.com/conventional-changelog/commitlint/issues/4953
     "breaking-change-exclamation-mark": [RuleConfigSeverity.Error, "always"],
     "header-max-length": [RuleConfigSeverity.Error, "always", MAX_HEADER_LENGTH],
     "scope-case": [RuleConfigSeverity.Error, "always", "lower-case"],

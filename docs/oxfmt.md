@@ -4,6 +4,7 @@ This file should be placed at the root of your project as `oxfmt.config.ts`:
 
 ```ts
 import type { OxfmtConfig } from "oxfmt";
+
 import { oxfmtConfig } from "@opinionated-ts/config";
 
 export default {

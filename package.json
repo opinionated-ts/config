@@ -67,43 +67,27 @@
     "audit": "bun audit fix --ignore GHSA-vfj7-8cjw-p6xm"
   },
   "dependencies": {
-    "@commitlint/cli": "^21.2.2",
-    "@commitlint/config-conventional": "^21.2.2",
-    "@cspell/dict-es-es": "^3.0.8",
-    "@types/bun": "^1.4.0",
-    "@types/node": "^26.2.0",
-    "cspell": "^10.0.1",
-    "lefthook": "^2.1.10",
-    "oxfmt": "^0.64.0",
-    "oxlint": "^1.79.0",
-    "oxlint-tsgolint": "^7.0.2001",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@cspell/dict-es-es": "^3.0.9",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.4",
+    "cspell": "^10.3.6",
+    "lefthook": "^2.1.17",
+    "oxfmt": "^0.72.0",
+    "oxlint": "^1.87.0",
+    "oxlint-tsgolint": "^7.0.2003",
     "semantic-release": "^25.0.9"
   },
   "devDependencies": {
-    "conventional-changelog-conventionalcommits": "^10.4.0",
-    "skills": "^1.5.23",
-    "tsdown": "^0.22.14"
-  },
-  "peerDependencies": {
+    "conventional-changelog-conventionalcommits": "^10.4.1",
+    "skills": "^1.7.0",
+    "tsdown": "^0.23.0",
     "typescript": "^7.0.2"
   },
-  "resolutions": {
-    "aggregate-error": "npm:@socketregistry/aggregate-error@^1",
-    "indent-string": "npm:@socketregistry/indent-string@^1",
-    "is-unicode-supported": "npm:@socketregistry/is-unicode-supported@^1",
-    "isarray": "npm:@socketregistry/isarray@^1",
-    "object-assign": "npm:@socketregistry/object-assign@^1",
-    "safe-buffer": "npm:@socketregistry/safe-buffer@^1",
-    "safer-buffer": "npm:@socketregistry/safer-buffer@^1"
-  },
+  "peerDependencies": {},
   "overrides": {
-    "aggregate-error": "npm:@socketregistry/aggregate-error@^1",
-    "indent-string": "npm:@socketregistry/indent-string@^1",
-    "is-unicode-supported": "npm:@socketregistry/is-unicode-supported@^1",
-    "isarray": "npm:@socketregistry/isarray@^1",
-    "object-assign": "npm:@socketregistry/object-assign@^1",
-    "safe-buffer": "npm:@socketregistry/safe-buffer@^1",
-    "safer-buffer": "npm:@socketregistry/safer-buffer@^1"
+    "tinypool": "2.1.2"
   },
   "engines": {
     "bun": "^1.4.0",
